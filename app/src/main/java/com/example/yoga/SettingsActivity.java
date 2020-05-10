@@ -46,7 +46,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 saveDifficultyMode();
 
-                saveAlarm(switchAlarm.isChecked());
+                //saveAlarm(switchAlarm.isChecked());
 
                 Toast.makeText(SettingsActivity.this, "Difficulty Level Saved!", Toast.LENGTH_SHORT).show();
                 finish();
@@ -59,9 +59,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         radioGroup = (RadioGroup) findViewById(R.id.radio_group);
 
-       // switchAlarm = (ToggleButton) findViewById(R.id.switch_alarm);
 
-       // timePicker = (TimePicker) findViewById(R.id.time_picker);
 
         yogaAndroidDB = new YogaAndroidDB(this);
 
@@ -70,38 +68,7 @@ public class SettingsActivity extends AppCompatActivity {
         setRadioButton(mode);
     }
 
-    private void saveAlarm(boolean checked) {
-        if (checked) {
-            AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
-            Intent intent;
-
-            PendingIntent pendingIntent;
-
-            intent = new Intent(SettingsActivity.this, AlarmNotificationReceiver.class);
-            pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
-
-            // Set time for te alarm
-            Calendar calendar = Calendar.getInstance();
-
-            Date today = Calendar.getInstance().getTime();
-
-            calendar.set(today.getYear(), today.getMonth(), today.getDay(), timePicker.getHour(), timePicker.getMinute());
-
-            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
-            Log.d("DEBUG","alarm will wake"+timePicker.getHour()+" : "+timePicker.getMinute());
-           // Toast.makeText(SettingsActivity.this, "Alarm Saved!", Toast.LENGTH_SHORT).show();
-
-        } else {
-            // Cancel alarm
-            Intent intent = new Intent(SettingsActivity.this, AlarmNotificationReceiver.class);
-
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0);
-
-            AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-            alarmManager.cancel(pendingIntent);
-        }
-    }
 
    private void saveDifficultyMode() {
         int selectId = radioGroup.getCheckedRadioButtonId();

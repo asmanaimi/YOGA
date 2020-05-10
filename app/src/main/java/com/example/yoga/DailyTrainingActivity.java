@@ -234,7 +234,7 @@ public class DailyTrainingActivity extends AppCompatActivity {
             }
         }
     };
-    CountDownTimer exerciseMediumModeCountDown= new CountDownTimer(Common.TIME_LIMIT_EASY, 1000) {
+    CountDownTimer exerciseMediumModeCountDown= new CountDownTimer(Common.TIME_LIMIT_MEDIUM, 1000) {
         @Override
         public void onTick(long millisUntilFinished) {
             timerText.setText("" + (millisUntilFinished / 1000));
@@ -257,7 +257,7 @@ public class DailyTrainingActivity extends AppCompatActivity {
             }
         }
     };
-    CountDownTimer exerciseHardModeCountDown= new CountDownTimer(Common.TIME_LIMIT_EASY, 1000) {
+    CountDownTimer exerciseHardModeCountDown= new CountDownTimer(Common.TIME_LIMIT_HARD, 1000) {
         @Override
         public void onTick(long millisUntilFinished) {
             timerText.setText("" + (millisUntilFinished / 1000));

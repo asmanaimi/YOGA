@@ -39,15 +39,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-      /*  calendarButton = (Button) findViewById(R.id.calendar_button);
-        calendarButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               Intent intent = new Intent(MainActivity.this, CalendarActivity.class);
-                startActivity(intent);
-            }
-        });
-*/
+
         trainingButton = (ImageView) findViewById(R.id.training_button);
         trainingButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -30,6 +30,14 @@
                 android:layout_height="wrap_content" />
 
             <RadioButton
+                android:id="@+id/medium_button"
+                android:text="@string/medium"
+                android:layout_weight="1"
+                android:theme="@style/MyRadioButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
                 android:id="@+id/hard_button"
                 android:text="@string/hard"
                 android:layout_weight="1"
@@ -54,13 +62,5 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:shadowColor="@color/colorPrimaryDark" />
-
-    <RadioButton
-        android:id="@+id/medium_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/medium"
-        android:theme="@style/MyRadioButton" />
 
 </RelativeLayout>
